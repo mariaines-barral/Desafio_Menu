@@ -8,8 +8,52 @@ using System.Collections;
 public class Table
 {
     private ArrayList order = new ArrayList();
+    private bool isOccupied;
+    private int number;
+    //private int Number;
+    //private bool isOccupied;
+
+    public ArrayList Order
+    {
+        get { return this.order; }
+        set { this.order = value; }
+    }
+    
+    public bool IsOccupied
+    {
+        get { return this.isOccupied; }
+        set { this.isOccupied = value; }
+    }
+
+    public int Number
+    {
+        get { return this.number; }
+        set { this.number = value; }
+    }
+    public Table(int number)
+    {
+        this.number = number;
+    }
+    
     public bool HasOrders()
     {
         return this.order.Count > 0;
+    }
+    
+    public void Ocupy()
+    {
+        this.isOccupied = true;
+    }
+
+    public void AddToOrder(Dish dish)
+    {
+        this.order.Add(dish);
+    }
+
+    public void Free()
+    {
+        this.isOccupied = false;
+        this.order.Clear();
+        
     }
 }
