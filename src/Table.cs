@@ -10,14 +10,6 @@ public class Table
     private ArrayList order = new ArrayList();
     private bool isOccupied;
     private int number;
-    //private int Number;
-    //private bool isOccupied;
-
-    public ArrayList Order
-    {
-        get { return this.order; }
-        set { this.order = value; }
-    }
     
     public bool IsOccupied
     {
@@ -54,6 +46,5 @@ public class Table
     {
         this.isOccupied = false;
         this.order.Clear();
-        
     }
 }
