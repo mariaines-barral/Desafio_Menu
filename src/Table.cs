@@ -7,7 +7,7 @@ using System.Collections;
 /// </summary>
 public class Table
 {
-    private ArrayList order = new ArrayList();
+    private Order order;
     private bool isOccupied;
     private int number;
     
@@ -29,7 +29,7 @@ public class Table
     
     public bool HasOrders()
     {
-        return this.order.Count > 0;
+        return this.order.Dishes.Count > 0;
     }
     
     public void Ocupy()
@@ -39,13 +39,13 @@ public class Table
 
     public void AddToOrder(Dish dish)
     {
-        this.order.Add(dish);
+        this.order.Dishes.Add(dish);
     }
 
     public void Free()
     {
         this.isOccupied = false;
-        this.order.Clear();
+        this.order.Dishes.Clear();
         
     }
 }
